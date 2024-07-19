@@ -16,7 +16,7 @@ jobs :
         -   name : Build and push user_service
             uses : docker/build-push-action@v6
             with :
-                context : /docker_files
+                context : ./docker_files
                 file : user_dockerfile
                 push : true
                 tags : ${{ secrets.DOCKER_USERNAME }}/user_service:latest
@@ -24,7 +24,7 @@ jobs :
         -   name : Build and push product_service
             uses : docker/build-push-action@v6
             with :
-                context : /docker_files
+                context : ./docker_files
                 file : product_dockerfile
                 push : true
                 tags : ${{ secrets.DOCKER_USERNAME }}/product_service:latest
@@ -32,7 +32,7 @@ jobs :
         -   name : Build and push order_service
             uses : docker/build-push-action@v6
             with :
-                context : /docker_files
+                context : ./docker_files
                 file : order_dockerfile
                 push : true
                 tags : ${{ secrets.DOCKER_USERNAME }}/order_service:latest
