@@ -1,7 +1,7 @@
 name : Docker build and push
 on : [push]
 jobs : 
-    build :
+    docker_build_push :
         runs-on : ubuntu-latest
         steps : 
         -   name : Checkout
@@ -20,6 +20,14 @@ jobs :
                 file : ./docker_files/alpine_node
                 push : false
                 tags : alpine_node:latest
+
+        -   name : Build and push ngnix_rev_proxy
+            uses : docker/build-push-action@v6
+            with :
+                context : ./docker_files/
+                file : ./docker_files/ngnix_rev_proxy
+                push : true
+                tags : ${{ secrets.DOCKER_USERNAME }}/ngnix_rev_proxy:latest
 
         -   name : Build and push user_service
             uses : docker/build-push-action@v6

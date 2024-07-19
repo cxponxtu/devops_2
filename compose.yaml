@@ -51,6 +51,16 @@ services:
       timeout: 3s
       retries: 5
   
+  ngnix:
+    container_name: ngnix
+    image: revanth7733/ngnix_rev_proxy:latest
+    ports:
+      - "3000:80"
+    depends_on:
+      - order
+      - product
+      - user
+
 volumes:
   rabbitmq_db:
   redis_db:
