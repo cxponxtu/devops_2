@@ -1,4 +1,3 @@
-# FROM alpine_node
 FROM alpine:3.20.1
 RUN apk add --update nodejs npm
 COPY  assets/user-service /app
