@@ -4,7 +4,7 @@
 echo "`date +'%d-%m-%y_%H_%M_%S'`\nStart of log\n" >> deploy.log
 
 # Pulling images
-echo "Puling images..."
+echo "Pulling images..."
 docker compose pull 2>&1 | cat >> deploy.log
 if [ $? -eq 0 ]
 then
