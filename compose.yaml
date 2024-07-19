@@ -1,0 +1,51 @@
+name : spider_2
+services:
+  order:
+    container_name: order
+    build: 
+      context: docker_files
+      dockerfile: order_dock
+    ports:
+      - "3003:3003"
+    depends_on:
+      - rabbitmq
+  
+  product:
+    container_name: product
+    build: 
+      context: docker_files
+      dockerfile: product_dock
+    ports:
+      - "3002:3002"
+    depends_on:
+      - rabbitmq
+
+  user:
+    container_name: user
+    build:
+      context: docker_files
+      dockerfile: user_dock
+    ports:
+      - "3001:3001"
+    depends_on:
+      - rabbitmq
+      - redis
+    
+  rabbitmq:
+    container_name: rabbitmq
+    image: rabbitmq:3.13.4-alpine
+    # environment:
+    #   RABBITMQ_DEFAULT_USER: user
+    #   RABBITMQ_DEFAULT_PASS: pass
+    volumes:
+      - rabbitmq_db:/var/lib/rabbitmq
+
+  redis:
+    container_name: redis
+    image: redis:7.2.5-alpine
+    volumes:
+      - redis_db:/data
+  
+volumes:
+  rabbitmq_db:
+  redis_db:
