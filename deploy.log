@@ -1,0 +1,153 @@
+ redis Pulling 
+ user Pulling 
+ rabbitmq Pulling 
+ product Pulling 
+ order Pulling 
+ user Pulled 
+ rabbitmq Pulled 
+ product Pulled 
+ order Pulled 
+ redis Pulled 
+ Container redis  Running
+ Container rabbitmq  Running
+ Container product  Running
+ Container order  Running
+ Container user  Running
+-e 19-07-24_11_29_41
+ Start of log
+
+ product Pulling 
+ order Pulling 
+ redis Pulling 
+ rabbitmq Pulling 
+ user Pulling 
+ product Pulled 
+ user Pulled 
+ order Pulled 
+ redis Pulled 
+ rabbitmq Pulled 
+ Container redis  Running
+ Container rabbitmq  Running
+ Container order  Running
+ Container user  Running
+ Container product  Running
+-e 
+End of log file.
+
+
+
+-e 19-07-24_11_30_18
+ Start of log
+
+ user Pulling 
+ rabbitmq Pulling 
+ product Pulling 
+ redis Pulling 
+ order Pulling 
+ user Pulled 
+ order Pulled 
+ product Pulled 
+ rabbitmq Pulled 
+ redis Pulled 
+ Container redis  Running
+ Container rabbitmq  Running
+ Container user  Running
+ Container product  Running
+ Container order  Running
+-e 
+End of log file.
+
+
+
+19-07-24_11_30_55
+ Start of log
+
+ rabbitmq Pulling 
+ redis Pulling 
+ user Pulling 
+ product Pulling 
+ order Pulling 
+ order Pulled 
+ user Pulled 
+ rabbitmq Pulled 
+ product Pulled 
+ redis Pulled 
+ Container redis  Running
+ Container rabbitmq  Running
+ Container product  Running
+ Container user  Running
+ Container order  Running
+
+End of log file.
+
+
+
+19-07-24_11_31_50
+Start of log
+
+ product Pulling 
+ rabbitmq Pulling 
+ redis Pulling 
+ user Pulling 
+ order Pulling 
+ user Pulled 
+ order Pulled 
+ product Pulled 
+ rabbitmq Pulled 
+ redis Pulled 
+ Container redis  Running
+ Container rabbitmq  Running
+ Container order  Running
+ Container product  Running
+ Container user  Running
+
+End of log file.
+
+
+
+19-07-24_11_31_53
+Start of log
+
+ order Pulling 
+ user Pulling 
+ redis Pulling 
+ rabbitmq Pulling 
+ product Pulling 
+ user Pulled 
+ order Pulled 
+ product Pulled 
+ rabbitmq Pulled 
+ redis Pulled 
+ Container rabbitmq  Running
+ Container product  Running
+ Container redis  Running
+ Container user  Running
+ Container order  Running
+
+End of log file.
+
+
+
+19-07-24_11_33_21
+Start of log
+
+ product Pulling 
+ user Pulling 
+ rabbitmq Pulling 
+ redis Pulling 
+ order Pulling 
+ user Pulled 
+ product Pulled 
+ redis Pulled 
+ order Pulled 
+ rabbitmq Pulled 
+ Container redis  Running
+ Container rabbitmq  Running
+ Container order  Running
+ Container product  Running
+ Container user  Running
+
+End of log file.
+
+
+
