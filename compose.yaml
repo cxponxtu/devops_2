@@ -1,4 +1,4 @@
-name : spider_2
+name : devops_2
 services:
   order:
     container_name: order
@@ -6,7 +6,8 @@ services:
     ports:
       - "3003:3003"
     depends_on:
-      - rabbitmq
+      rabbitmq : 
+        condition: service_healthy
   
   product:
     container_name: product
@@ -14,7 +15,8 @@ services:
     ports:
       - "3002:3002"
     depends_on:
-      - rabbitmq
+      rabbitmq : 
+        condition: service_healthy
 
   user:
     container_name: user
@@ -22,20 +24,32 @@ services:
     ports:
       - "3001:3001"
     depends_on:
-      - rabbitmq
-      - redis
+      rabbitmq : 
+        condition: service_healthy
+      redis : 
+        condition: service_healthy
     
   rabbitmq:
     container_name: rabbitmq
     image: rabbitmq:3.13.4-alpine
     volumes:
       - rabbitmq_db:/var/lib/rabbitmq
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "check_port_connectivity"]
+      interval: 3s
+      timeout: 3s
+      retries: 5
 
   redis:
     container_name: redis
     image: redis:7.2.5-alpine
     volumes:
       - redis_db:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 3s
+      timeout: 3s
+      retries: 5
   
 volumes:
   rabbitmq_db:
