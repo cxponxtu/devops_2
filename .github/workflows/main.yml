@@ -21,13 +21,13 @@ jobs :
                 push : false
                 tags : alpine_node:latest
 
-        -   name : Build and push ngnix_rev_proxy
+        -   name : Build and push nginx_rev_proxy
             uses : docker/build-push-action@v6
             with :
                 context : ./docker_files/
-                file : ./docker_files/ngnix_rev_proxy
+                file : ./docker_files/nginx_rev_proxy
                 push : true
-                tags : ${{ secrets.DOCKER_USERNAME }}/ngnix_rev_proxy:latest
+                tags : ${{ secrets.DOCKER_USERNAME }}/nginx_rev_proxy:latest
 
         -   name : Build and push user_service
             uses : docker/build-push-action@v6

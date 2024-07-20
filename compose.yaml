@@ -3,8 +3,6 @@ services:
   order:
     container_name: order
     image: revanth7733/order_service:latest
-    ports:
-      - "3003:3003"
     depends_on:
       rabbitmq : 
         condition: service_healthy
@@ -12,8 +10,6 @@ services:
   product:
     container_name: product
     image: revanth7733/product_service:latest
-    ports:
-      - "3002:3002"
     depends_on:
       rabbitmq : 
         condition: service_healthy
@@ -21,8 +17,6 @@ services:
   user:
     container_name: user
     image: revanth7733/user_service:latest
-    ports:
-      - "3001:3001"
     depends_on:
       rabbitmq : 
         condition: service_healthy
@@ -51,9 +45,9 @@ services:
       timeout: 3s
       retries: 5
   
-  ngnix:
-    container_name: ngnix
-    image: revanth7733/ngnix_rev_proxy:latest
+  nginx:
+    container_name: nginx
+    image: revanth7733/nginx_rev_proxy:latest
     ports:
       - "3000:80"
     depends_on:
