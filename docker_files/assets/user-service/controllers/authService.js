@@ -6,14 +6,15 @@ const { createClient } = require('redis');
 
 const redisClient = createClient({ url: 'redis://redis:6379' });
 
+redisClient.connect();
+
+redisClient.on("connect", () => {
+  console.log("Connected to Redis");
+});
+
 async function viewUsers(req, res) {
 
-  redisClient.connect();
-  const name = req.body.name;
-
-  redisClient.on("connect", () => {
-    console.log("Connected to Redis");
-  });
+  const name = req.query.name;
 
   const value = await redisClient.get(name);
   if (value !== null) {
