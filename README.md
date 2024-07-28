@@ -1,5 +1,5 @@
 
-# Devops Task - 2
+# DevOps Task - 2
 - For backend, I used the [resources](https://github.com/UncleWeeds/spiderTask-2) given in the task pdf.
 - I created the service images by separate dockerfile for each service with `alpine` as base image and installed `nodejs` and `npm` to run services.
 - The whole setup is dockerised and can be deployed or restarted with latest images by running 
@@ -60,5 +60,5 @@ curl -X POST http://localhost:3000/product/buy -H "Content-Type: application/jso
 - Workflow consists of jobs and job is defined with steps.
 - This workflow is triggered whenever there is commit on repo.
 - To upload the images, login is needed which is done by `docker/login-action@v3` action using PAT(Personal Accesss Token) stored in Github secrets.
-- Instead of intalling `nodejs` and `npm` for each services, they are installed in `alpine_node` image and it is used for building service images.
+- Instead of installing `nodejs` and `npm` for each services, they are installed in `alpine_node` image and it is used for building service images.
 
