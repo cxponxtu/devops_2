@@ -49,6 +49,10 @@ curl -X POST http://localhost:3000/product/create -H "Content-Type: application/
 ```bash
 curl -X POST http://localhost:3000/product/buy -H "Content-Type: application/json" -d '{ "ids" : "669ba919f0b262660130ef58"}'
 ```
+### Output of above requests:
+
+![sample](sample.png)
+
 ## Compose Configuration
 - To build the images, `Dockerfile` is configuration file.
 - For running multiple containers at same time as cluster, `docker compose` is used with `compose.yaml` as configuration file.
