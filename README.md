@@ -42,8 +42,7 @@ curl -X DELETE http://localhost:3000/users/profile -H "Content-Type: application
 
 - To create new product
 ```bash
-curl -X POST http://localhost:3000/product/create -H "Content-Type: application/
-json" -d '{ "name" : "eraser", "description" : "used to erase", "price" : "10"}'
+curl -X POST http://localhost:3000/product/create -H "Content-Type: application/json" -d '{ "name" : "eraser", "description" : "used to erase", "price" : "10"}'
 ```
 
 - To order a product
